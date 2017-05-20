@@ -91,4 +91,4 @@ virtualenv/
 .ropeproject
 
 # settings do projeto
-configs/settings-prod.json
+api/configs/settings-prod.json
