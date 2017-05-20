@@ -1,7 +1,7 @@
 import json
 import os
 
-ROOT_DIR = os.path.abspath('./../')
+ROOT_DIR = os.path.abspath('.')
 
 
 class Settings:
@@ -12,7 +12,7 @@ class Settings:
         self.settings = settings
 
     def __get_environment(self):
-        settings = json.load(open(os.path.join(ROOT_DIR, 'configs/environment.json')))
+        settings = json.load(open(os.path.join(ROOT_DIR, 'api/configs/environment.json')))
         env = settings['environment']
         return env
 
@@ -20,7 +20,7 @@ class Settings:
         if environment is None:
             raise ValueError('environment argument expected!')
 
-        file_name = 'configs/settings-{0}.json'.format(environment)
+        file_name = 'api/configs/settings-{0}.json'.format(environment)
         settings = json.load(open(os.path.join(ROOT_DIR, file_name)))
         return settings
 

@@ -1,6 +1,6 @@
 import requests
 from api.settings import settings
-
+from api.steam.utils import Utils
 
 class Steam:
     def __init__(self):
@@ -32,6 +32,7 @@ class Steam:
 
         for game in game_list:
             if game["playtime_forever"] > 0:
+                game['playtime_forever'] = Utils.minutes_to_hour_and_minutes(game['playtime_forever'])
                 filtered_list.append(game)
 
         return filtered_list

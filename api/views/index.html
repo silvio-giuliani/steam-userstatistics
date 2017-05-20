@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body { background-color:black; }
+        div { color: white; }
+        #wrapper {
+          width:700px;
+          clear:both;
+        }
+        #first {
+          background-color:red;
+          width:200px;
+          float:left;
+        }
+        #second {
+          background-color:blue;
+          width:300px;
+          float:left;
+        }
+        #third {
+          background-color:#bada55;
+          width:200px;
+          float:left;
+        }
+    </style>
+</head>
+<body>
+{% if games %}
+{% for item in games %}
+<div>
+    <div>Id: {{ item.appid }}</div>
+    <div>Game: {{ item.name }}</div>
+    <div>
+        <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{ item.appid }}/{{ item.img_logo_url }}.jpg">
+    </div>
+    <div>Total Play Time: {{ item.playtime_forever }}</div>
+</div>
+<div>&nbsp;</div>
+{% endfor %}
+{% endif %}
+
+<!--
+<div id="wrapper">
+  <div id="first">first</div>
+  <div id="second">second</div>
+  <div id="third">third</div>
+</div>
+-->
+
+</body>
+</html>
